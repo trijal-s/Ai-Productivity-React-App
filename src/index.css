@@ -1,0 +1,249 @@
+/* -----------------------------
+   GLOBAL THEME
+------------------------------*/
+
+:root {
+  --bg: #0f172a;
+  --card: rgba(255, 255, 255, 0.08);
+  --glass: rgba(255, 255, 255, 0.12);
+  --primary: #6366f1;
+  --accent: #22d3ee;
+  --pink: #ec4899;
+  --text: #e5e7eb;
+  --muted: #94a3b8;
+  --radius: 16px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Inter", system-ui, sans-serif;
+  background: radial-gradient(circle at top, #1e293b, #020617);
+  color: var(--text);
+}
+
+/* -----------------------------
+   LAYOUT
+------------------------------*/
+
+.app {
+  display: flex;
+  height: 100vh;
+}
+
+/* -----------------------------
+   SIDEBAR
+------------------------------*/
+
+.sidebar {
+  width: 260px;
+  background: linear-gradient(180deg, #020617, #0f172a);
+  padding: 28px;
+  border-right: 1px solid rgba(255,255,255,0.08);
+  backdrop-filter: blur(20px);
+}
+
+.sidebar h1 {
+  font-size: 22px;
+  margin-bottom: 30px;
+  background: linear-gradient(90deg, var(--accent), var(--primary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.sidebar button {
+  width: 100%;
+  padding: 14px 16px;
+  margin-bottom: 12px;
+  border: none;
+  background: transparent;
+  color: var(--text);
+  cursor: pointer;
+  text-align: left;
+  border-radius: var(--radius);
+  transition: 0.25s ease;
+  font-size: 15px;
+}
+
+.sidebar button:hover {
+  background: rgba(99, 102, 241, 0.15);
+}
+
+.sidebar button.active {
+  background: linear-gradient(135deg, var(--primary), var(--accent));
+  color: white;
+  box-shadow: 0 10px 30px rgba(99,102,241,0.4);
+}
+
+/* -----------------------------
+   MAIN
+------------------------------*/
+
+.main {
+  flex: 1;
+  padding: 40px;
+  overflow-y: auto;
+}
+
+/* -----------------------------
+   CARDS
+------------------------------*/
+
+.card {
+  background: var(--card);
+  backdrop-filter: blur(16px);
+  border-radius: var(--radius);
+  padding: 24px;
+  margin-bottom: 24px;
+  border: 1px solid rgba(255,255,255,0.08);
+  transition: 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+}
+
+/* -----------------------------
+   BUTTONS
+------------------------------*/
+
+.btn {
+  padding: 12px 22px;
+  border-radius: 999px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.25s ease;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--primary), var(--accent));
+  color: white;
+}
+
+.btn-primary:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 30px rgba(99,102,241,0.6);
+}
+
+.btn-gray {
+  background: rgba(255,255,255,0.15);
+  color: white;
+}
+
+.btn-danger {
+  background: linear-gradient(135deg, #ef4444, #f97316);
+  color: white;
+}
+
+/* -----------------------------
+   TASKS
+------------------------------*/
+
+.task-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px;
+  border-radius: 12px;
+  background: rgba(255,255,255,0.05);
+  margin-bottom: 10px;
+  transition: 0.25s;
+}
+
+.task-item:hover {
+  background: rgba(255,255,255,0.12);
+}
+
+/* -----------------------------
+   MODAL
+------------------------------*/
+
+.modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.65);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  backdrop-filter: blur(10px);
+}
+
+.modal-box {
+  background: linear-gradient(180deg, #020617, #0f172a);
+  padding: 28px;
+  width: 340px;
+  border-radius: 20px;
+  border: 1px solid rgba(255,255,255,0.1);
+  animation: pop 0.3s ease;
+}
+
+@keyframes pop {
+  from { transform: scale(0.85); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+/* -----------------------------
+   AI INSIGHTS
+------------------------------*/
+
+.ai-title {
+  font-size: 26px;
+  font-weight: 700;
+  display: flex;
+  gap: 12px;
+}
+
+.ai-icon {
+  color: #facc15;
+  animation: glow 2s infinite;
+}
+
+@keyframes glow {
+  0%,100% { filter: drop-shadow(0 0 5px #facc15); }
+  50% { filter: drop-shadow(0 0 15px #fde047); }
+}
+
+.ai-box {
+  background: linear-gradient(135deg, #1e40af, #22d3ee);
+  padding: 20px;
+  border-radius: 16px;
+  color: white;
+  font-size: 16px;
+}
+
+/* -----------------------------
+   ANALYTICS
+------------------------------*/
+
+.analytics-title {
+  font-size: 26px;
+  margin-bottom: 10px;
+}
+
+/* -----------------------------
+   FOCUS TIMER
+------------------------------*/
+
+.focus-title {
+  font-size: 28px;
+}
+
+.focus-time {
+  font-size: 80px;
+  font-family: "JetBrains Mono", monospace;
+  background: linear-gradient(90deg, var(--accent), var(--pink));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.focus-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
